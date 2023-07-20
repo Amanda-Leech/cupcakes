@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import data from '../data';
 
 function HomeScreen() {
@@ -7,13 +8,13 @@ function HomeScreen() {
             <div className="products">
                 {data.products.map((products) => (
                     <div className="product" key={products.slug}>
-                        <a href={`/product/${products.slug}`}>
+                        <Link to={`/product/${products.slug}`}>
                             <img src={products.image} alt={products.name} />
-                        </a>
+                        </Link>
                         <div className="product-info">
-                            <a href={`/product/${products.slug}`}>
+                            <Link to={`/product/${products.slug}`}>
                                 <p>{products.name}</p>
-                            </a>
+                            </Link>
                             <p>
                                 <strong>${products.price}</strong>
                             </p>
